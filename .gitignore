@@ -1,0 +1,11 @@
+node_modules
+.next
+.vercel
+.env
+.env.*
+dist
+coverage
+*.log
+.DS_Store
+storage
+apps/ai/storage

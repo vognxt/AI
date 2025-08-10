@@ -1,0 +1,17 @@
+{
+  "name": "design-platform-monorepo",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently -n web,api,ai -c blue,green,magenta \"npm --workspace apps/web run dev\" \"npm --workspace apps/api run dev\" \"npm --workspace apps/ai run dev\"",
+    "build": "npm --workspace apps/web run build && npm --workspace apps/api run build && npm --workspace apps/ai run build",
+    "start": "concurrently -n web,api,ai -c blue,green,magenta \"npm --workspace apps/web start\" \"npm --workspace apps/api start\" \"npm --workspace apps/ai start\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
